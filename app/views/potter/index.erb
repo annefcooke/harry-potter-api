@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1 class="title">List of Main Characters</h1>
+    </div>
+  </div>
+
+  <% @character.get_all_characters.each do |character| %>
+
+  <div class="card">
+    <div class="img-container">
+      <img class="text-center"
+      src="<%= character["image"] %>" alt="Avatar" style="width:30%;margin:auto;">
+    </div>
+    <div class="card-container">
+      <h4><b><%= character["name"] %></b></h4>
+      <p><%= character["house"] %></p>
+      <p><%= character["ancestry"].capitalize %></p>
+      <p><%= character["patronus"].capitalize %></p>
+
+      <!-- <a class="link" href="/characters/<%= character["id"].to_i %>">See more</a> -->
+    </div>
+  </div>
+
+  <% end %>
+
+</div>
